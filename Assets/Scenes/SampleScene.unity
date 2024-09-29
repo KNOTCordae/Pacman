@@ -200,7 +200,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.5, y: 0.2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -543,9 +543,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d3e435d417494762b99dc17ac18c1cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalStateMusic: {fileID: 72122901}
-  scaredStateMusic: {fileID: 72122900}
-  deadStateMusic: {fileID: 72122899}
+  normalStateMusic: {fileID: 0}
+  scaredStateMusic: {fileID: 0}
+  deadStateMusic: {fileID: 0}
+  currentState: normal
 --- !u!1 &102948498
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,7 +628,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.3, y: 0, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -837,10 +838,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b5082f913d1047b892fa595982aa25c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSound: {fileID: 301994760}
-  collisionSound: {fileID: 301994759}
-  eatPelletSound: {fileID: 301994758}
-  deathSound: {fileID: 301994757}
+  moveSound: {fileID: 0}
+  collisionSound: {fileID: 0}
+  eatPelletSound: {fileID: 0}
+  deathSound: {fileID: 0}
 --- !u!82 &301994757
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1254,6 +1255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 491009940}
   - component: {fileID: 491009939}
+  - component: {fileID: 491009941}
   m_Layer: 0
   m_Name: Racquet_0
   m_TagString: Untagged
@@ -1323,13 +1325,35 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 491009938}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
   m_LocalPosition: {x: 1, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+--- !u!95 &491009941
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491009938}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 614cc4f50afb644d5ae4e723db5d6669, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &494515797
 GameObject:
   m_ObjectHideFlags: 0
@@ -1341,6 +1365,7 @@ GameObject:
   - component: {fileID: 494515800}
   - component: {fileID: 494515799}
   - component: {fileID: 494515798}
+  - component: {fileID: 494515801}
   m_Layer: 0
   m_Name: SuperPellet_0
   m_TagString: Untagged
@@ -1357,8 +1382,9 @@ Animation:
   m_GameObject: {fileID: 494515797}
   m_Enabled: 1
   serializedVersion: 4
-  m_Animation: {fileID: 0}
-  m_Animations: []
+  m_Animation: {fileID: 7400000, guid: 0a2b6ca9ef565462ca223498eb8e8395, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 0a2b6ca9ef565462ca223498eb8e8395, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -1433,6 +1459,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &494515801
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494515797}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ea77625251ea04f0d8711458db1561dd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &506800734
 GameObject:
   m_ObjectHideFlags: 0
@@ -1514,7 +1562,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2, y: 0.2, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1621,6 +1669,7 @@ GameObject:
   m_Component:
   - component: {fileID: 789727550}
   - component: {fileID: 789727549}
+  - component: {fileID: 789727551}
   m_Layer: 0
   m_Name: RedBall_0
   m_TagString: Untagged
@@ -1690,13 +1739,35 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789727548}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 1.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!95 &789727551
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789727548}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a3136f1332954fc18a1c42865a89f45, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &926861150
 GameObject:
   m_ObjectHideFlags: 0
