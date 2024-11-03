@@ -9,6 +9,9 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene"); 
     }
-
+    public void LoadStartScene()
+    {
+        SceneManager.LoadScene("StartScene");
+    }
 }
 
